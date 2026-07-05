@@ -1,5 +1,5 @@
 import { Container } from "@/components/shared/Container";
-import { functions } from "@/data/Functions";
+import { functions } from "@/data/ functions";
 import {
   Briefcase,
   ShoppingCart,
