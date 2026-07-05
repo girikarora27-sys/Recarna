@@ -1,12 +1,13 @@
+import { Container } from "@/components/shared/Container";
 export function Hero() {
   return (
-    <section className="flex min-h-screen items-center bg-white pt-20">
-      <div className="mx-auto max-w-7xl px-6">
-        <span className="rounded-full border border-slate-300 px-4 py-2 text-sm text-slate-600">
+    <section className="flex min-h-screen items-center bg-white pt-24">
+      <Container>
+        <span className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700">
           Enterprise ERP Consulting
         </span>
 
-        <h1 className="mt-8 max-w-4xl text-6xl font-bold leading-tight text-slate-900 md:text-7xl">
+        <h1 className="mt-8 max-w-4xl text-5xl font-bold leading-tight tracking-tight md:text-7xl">
           Digital Transformation
           <br />
           Built for
@@ -14,14 +15,14 @@ export function Hero() {
           Modern Businesses
         </h1>
 
-        <p className="mt-8 max-w-2xl text-xl text-slate-600">
+       <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
           We help manufacturers, distributors, retailers, and enterprises
           implement ERP solutions that streamline operations, increase
           efficiency, and accelerate growth.
         </p>
 
-        <div className="mt-10 flex gap-4">
-          <button className="rounded-xl bg-black px-8 py-4 text-white hover:bg-slate-800">
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <button className="rounded-xl border border-slate-300 bg-white px-8 py-4 font-medium transition-all hover:border-slate-900 hover:bg-slate-100">
             Book Consultation
           </button>
 
@@ -29,7 +30,7 @@ export function Hero() {
             Explore Solutions
           </button>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
