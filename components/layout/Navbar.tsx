@@ -1,55 +1,45 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { Logo } from "@/components/shared/Logo";
+import { Container } from "@/components/shared/Container";
+
 export function Navbar() {
+  const navItems = [
+    { name: "Home", href: "#" },
+    { name: "Services", href: "#" },
+    { name: "ERP Modules", href: "#" },
+    { name: "Industries", href: "#" },
+    { name: "Insights", href: "#" },
+    { name: "About", href: "#" },
+    { name: "Contact", href: "#" },
+  ];
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-        <Logo />
+    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
+      <Container>
+        <div className="flex h-20 items-center justify-between">
 
-        <nav className="hidden items-center gap-8 md:flex">
-          <nav className="hidden items-center gap-8 md:flex">
-  <a
-    href="#"
-    className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
-  >
-    Solutions
-  </a>
+          <Logo />
 
-  <a
-    href="#"
-    className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
-  >
-    Industries
-  </a>
+          <nav className="hidden items-center gap-8 lg:flex">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-sm font-medium text-slate-700 transition hover:text-indigo-600"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
 
-  <a
-    href="#"
-    className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
-  >
-    Products
-  </a>
+          <button className="hidden items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 lg:flex">
+            Book Consultation
+            <ArrowRight size={16} />
+          </button>
 
-  <a
-    href="#"
-    className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
-  >
-    Resources
-  </a>
-
-  <a
-    href="#"
-    className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
-  >
-    Company
-  </a>
-</nav>
-        </nav>
-
-        <button
-  className="rounded-xl bg-black px-6 py-3 text-sm font-medium text-white transition-all hover:scale-105 hover:bg-slate-800"
->
-  Book Consultation
-</button>
-      </div>
+        </div>
+      </Container>
     </header>
   );
 }

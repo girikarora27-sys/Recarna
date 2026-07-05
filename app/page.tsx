@@ -1,11 +1,15 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { HeroV2 } from "@/components/hero/HeroV2";
+import { Hero } from "@/components/hero/Hero";
+import { TechnologyStrip } from "@/components/technologies/TechnologyStrip";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <HeroV2 />
+      <main>
+        <Hero />
+        <TechnologyStrip />
+      </main>
     </>
   );
 }
